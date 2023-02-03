@@ -1,0 +1,7 @@
+{
+    "Problems": ["F9"],
+    "Dimensions": [10],
+    "NbArms": [10],
+    "load": false,
+    "save": true
+}

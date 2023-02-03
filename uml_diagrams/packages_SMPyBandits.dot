@@ -1,0 +1,36 @@
+digraph "packages_SMPyBandits" {
+charset="utf-8"
+rankdir=BT
+"0" [label="SMPyBandits", shape="box"];
+"1" [label="SMPyBandits.complete_tree_exploration_for_MP_bandits", shape="box"];
+"2" [label="SMPyBandits.configuration", shape="box"];
+"3" [label="SMPyBandits.configuration_all_singleplayer", shape="box"];
+"4" [label="SMPyBandits.configuration_comparing_aggregation_algorithms", shape="box"];
+"5" [label="SMPyBandits.configuration_comparing_doubling_algorithms", shape="box"];
+"6" [label="SMPyBandits.configuration_markovian", shape="box"];
+"7" [label="SMPyBandits.configuration_multiplayers", shape="box"];
+"8" [label="SMPyBandits.configuration_multiplayers_nonstationary", shape="box"];
+"9" [label="SMPyBandits.configuration_multiplayers_with_aggregation", shape="box"];
+"10" [label="SMPyBandits.configuration_nonstationary", shape="box"];
+"11" [label="SMPyBandits.configuration_sparse", shape="box"];
+"12" [label="SMPyBandits.configuration_sparse_multiplayers", shape="box"];
+"13" [label="SMPyBandits.env_client", shape="box"];
+"14" [label="SMPyBandits.example_of_configuration_multiplayers", shape="box"];
+"15" [label="SMPyBandits.example_of_configuration_singleplayer", shape="box"];
+"16" [label="SMPyBandits.example_of_main_multiplayers_more", shape="box"];
+"17" [label="SMPyBandits.example_of_main_singleplayer", shape="box"];
+"18" [label="SMPyBandits.main", shape="box"];
+"19" [label="SMPyBandits.main_multiplayers", shape="box"];
+"20" [label="SMPyBandits.main_multiplayers_more", shape="box"];
+"21" [label="SMPyBandits.main_sparse_multiplayers", shape="box"];
+"22" [label="SMPyBandits.policy_server", shape="box"];
+"23" [label="SMPyBandits.save_configuration_for_reproducibility", shape="box"];
+"24" [label="SMPyBandits.very_simple_configuration", shape="box"];
+"0" -> "0" [arrowhead="open", arrowtail="none"];
+"16" -> "14" [arrowhead="open", arrowtail="none"];
+"17" -> "24" [arrowhead="open", arrowtail="none"];
+"18" -> "23" [arrowhead="open", arrowtail="none"];
+"19" -> "23" [arrowhead="open", arrowtail="none"];
+"20" -> "23" [arrowhead="open", arrowtail="none"];
+"21" -> "12" [arrowhead="open", arrowtail="none"];
+}

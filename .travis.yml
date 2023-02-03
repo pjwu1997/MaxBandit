@@ -1,0 +1,58 @@
+# The configurations you want to execute
+# That is, a combination of operating system and python version
+# Please add or remove for your needs.
+# Check all possible values for python in here: https://docs.travis-ci.com/user/languages/python/
+# See how to further configure the matrix of combinations in here: https://docs.travis-ci.com/user/multi-os/
+language: python
+
+sudo: require
+
+matrix:
+    include:
+        # - os: linux
+        #   python: 2.7
+        # # - os: osx
+        # #   language: generic
+        # #   env: PYTHON=2.7
+        - os: linux
+          python: 3.6
+        # - os: osx
+        #   language: generic
+        #   env: PYTHON=3.6
+
+# Command to install dependencies for each configuration.
+before_install:
+# For OSX, you may want to call a script installing virtual env and so on.
+  - . ./other_scripts/travis_install.sh
+
+install:
+  - python -m pip install -U pip
+  - python -m easy_install -U setuptools
+  # - pip install -U pytest
+  # - pip install sphinx
+  - pip install -r requirements_full.txt
+
+script:
+  - python --version
+  # - . ./other_scripts/run_test_simulations.sh
+  - . ./other_scripts/run_all_doctest.sh
+  - cd SMPyBandits/
+  # # Testing basic things
+  # - N=4 T=1000 python example_of_main_singleplayer.py very_simple_configuration
+  # - N=4 T=1000 python example_of_main_singleplayer.py
+  # - N=4 T=1000 python example_of_main_multiplayers_more.py
+  # Testing single player
+  - N=4 T=1000 python main.py
+  - N=4 T=100 python main.py configuration_comparing_aggregation_algorithms
+  - N=4 T=100 python main.py configuration_comparing_doubling_algorithms
+  - N=4 T=1000 python main.py configuration_nonstationary
+  - N=4 T=100 python main.py configuration_sparse
+  - N=4 T=100 python main.py configuration_markovian
+  - NOPLOTS=True N=4 T=100 python main.py configuration_all_singleplayer
+  # Testing multi player
+  - N=4 T=100 python main_multiplayers.py
+  - N=4 T=1000 python main_multiplayers_more.py
+  - NOPLOTS=True N=4 T=100 python main_multiplayers_more.py configuration_multiplayers_with_aggregation
+  - NOPLOTS=True N=4 T=100 python main_sparse_multiplayers.py
+  - cd Policies/
+  - python kullback.py

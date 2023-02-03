@@ -1,0 +1,58 @@
+# Python cache
+*.pyc
+*.pyo
+__pycache__/
+*/__pycache__/
+
+# Nano backup
+*~
+*.swp
+
+# DS_Store
+.DS_Store
+
+# LaTeX files
+*paper.tex
+*.aux
+*.bbl
+*.blg
+*.fls
+*.out
+*.synctex*
+*.toc
+*.fls
+*.fdb_latexmk
+*.pdf
+
+# Useless files, generated during builds
+dist
+build
+*.egg-info
+*.so
+*.lprof
+*.gdf
+*.log
+
+# Documentation
+_build/
+# auto generated with 'make apidoc'
+docs/*.rst
+
+# Notebooks
+notebooks/.ipynb_checkpoints/
+notebooks/saved_problems/
+notebooks/arms/
+
+# Visual Studio Code configuration
+.vscode/
+
+# JetBrains PyCharm IDE configuration
+.idea/
+
+# C++ executables
+*.exe
+
+# Virtual envs
+venv/
+venv3/
+venv2/
